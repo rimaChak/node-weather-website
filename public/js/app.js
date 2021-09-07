@@ -1,6 +1,6 @@
 console.log('Client side javascript file is loaded');
 
-fetch('http://puzzle.mead.io/puzzle').
+fetch('/puzzle').
 then(response => {
    response.json().then(data => {
     console.log(data);
@@ -19,7 +19,7 @@ weatherForm.addEventListener('submit', (e) => {
         search.value = '';
         message1.textContent = 'Loading...';
         message2.textContent = "";
-        fetch('http://localhost:3000/weather?address='+location).then(response => {
+        fetch('/weather?address='+location).then(response => {
             response.json().then(data => {
                 if(data.error){
                     message1.textContent = 'Unable to find the location.Try another search!';
